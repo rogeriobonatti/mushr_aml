@@ -24,8 +24,9 @@ env.python.interpreter_path = "xvfb-run -s '-screen 0 640x480x16 -ac +extension 
 env.register(ws)
 
 installation_cmds = ("mkdir -p catkin_ws/src && " +                    
-                     "mv mushr/* catkin_ws/src/ && cd catkin_ws/src/ && "
+                     "mv mushr/* catkin_ws/src/ && cd catkin_ws/src/ && " +
                      "vcs import < repos.yaml && " +
+                     "git clone https://github.com/ros/geometry2 && " +
                      "mv mushr/mushr_hardware/realsense/realsense2_description mushr/mushr_hardware/realsense2_description && " +
                      "rm -rf mushr/mushr_hardware/realsense && " +
                      "cd ./range_libc/pywrapper && " +
@@ -41,7 +42,6 @@ output = OutputFileDatasetConfig(destination=(datastore, 'hackathon_data'))
 
 script_run_config = ScriptRunConfig(
     source_directory=os.path.join(root_dir), 
-    # command=[installation_cmds + "/bin/bash -c '. /opt/ros/melodic/setup.bash;. ./devel/setup.bash; roslaunch mushr_sim server_collection.launch'"],
     command=[installation_cmds + "python ./src/main.py", "--data_path", output.as_mount()],
     compute_target=compute_manager.create_compute_target(ws, 'd12v2'),
     environment=env)
