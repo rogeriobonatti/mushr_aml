@@ -12,7 +12,7 @@ ws = Workspace.from_config()
 root_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir)
 
 env = None
-with open("Dockerfile", "r") as f:
+with open("ros_melodic.Dockerfile", "r") as f:
     dockerfile=f.read()
 
 env = Environment(name='ros-melodic-env')
