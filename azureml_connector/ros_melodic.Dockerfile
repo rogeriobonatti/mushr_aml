@@ -41,6 +41,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-urg-node \
     ros-melodic-robot-state-publisher \ 
     ros-melodic-xacro \  
+    ros-melodic-tf2-ros \
     gfortran \
     libopenblas-dev \ 
     liblapack-dev && \
@@ -63,6 +64,7 @@ RUN conda install -y conda=4.7.12 python=3.7 && conda clean -ay && \
     future==0.17.1 \
     torch \
     pycryptodome \
+    gnupg \
     empy \
     vcstool \
     setproctitle && \
