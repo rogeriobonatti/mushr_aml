@@ -26,13 +26,16 @@ env.register(ws)
 installation_cmds = ("mkdir -p catkin_ws/src && " +                    
                      "mv mushr/* catkin_ws/src/ && cd catkin_ws/src/ && " +
                      "vcs import < repos.yaml && " +
-                     "git clone https://github.com/ros/geometry2 && " +
+                     "git clone -b melodic-devel https://github.com/ros/robot_state_publisher.git && " +
+                     "git clone -b melodic-devel https://github.com/rogeriobonatti/geometry.git && " +
+                     "git clone -b melodic-devel https://github.com/ros/geometry2 && " +
                      "mv mushr/mushr_hardware/realsense/realsense2_description mushr/mushr_hardware/realsense2_description && " +
                      "rm -rf mushr/mushr_hardware/realsense && " +
                      "cd ./range_libc/pywrapper && " +
                      "python setup.py install && " +
                      "cd ../../ && " +
                      "rm -rf range_libc && " +
+                     "wget https://github.com/wjwwood/serial-release/archive/release/melodic/serial/1.2.1.tar.gz && tar -xvf *.gz && rm *.gz &&" +
                      "cd .. && " +
                      "/bin/bash -c '. /opt/ros/melodic/setup.bash; catkin_make' && " +
                      "/bin/bash -c '. ./devel/setup.bash' && ")  
