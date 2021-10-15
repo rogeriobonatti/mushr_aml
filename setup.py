@@ -11,9 +11,9 @@ with open('requirements.txt') as req_file:
     requirements = req_file.read().splitlines()
 
 setuptools.setup(
-    name='mushr',
+    name='mushr_aml',
     version='0.1',
-    url = "https://github.com/microsoft-fevieira/mushr",
+    url = "https://github.com/rbonatti/mushr_aml",
     include_package_data=True,
     packages=setuptools.find_packages(),
     install_requires=requirements
