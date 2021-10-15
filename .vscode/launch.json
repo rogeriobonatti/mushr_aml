@@ -8,8 +8,8 @@
             "name": "aml",
             "type": "python",
             "request": "launch",
-            "cwd": "${workspaceFolder}\\azureml_connector\\",
-            "program": "aml_launcher_noetic.py",
+            "cwd": "${workspaceFolder}/azureml_connector/",
+            "program": "aml_launcher_melodic.py",
             "justMyCode": false,
             "console": "integratedTerminal"
         },

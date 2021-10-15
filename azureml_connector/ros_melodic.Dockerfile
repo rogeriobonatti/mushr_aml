@@ -27,7 +27,7 @@ ENV ROS_DISTRO melodic
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-melodic-ros-core=1.4.1-0* \
+    ros-melodic-desktop-full=1.4.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -55,7 +55,9 @@ RUN conda install -y conda=4.7.12 python=3.7 && conda clean -ay && \
     azureml-defaults==1.35.0 \
     azureml-mlflow==1.35.0 \
     azureml-telemetry==1.35.0 \
+    wstool \
     rospkg \
+    catkin_pkg \
     numpy \
     Cython \
     scipy \

@@ -39,11 +39,11 @@ installation_cmds = ("mkdir -p catkin_ws/src && " +
                      "/bin/bash -c '. ./devel/setup.bash' && ")  
 
 datastore = ws.get_default_datastore()
-output = OutputFileDatasetConfig(destination=(datastore, 'hackathon_data'))
+output = OutputFileDatasetConfig(destination=(datastore, 'hackathon_data'), source='/tmp/data/')
 
 script_run_config = ScriptRunConfig(
     source_directory=os.path.join(root_dir), 
-    command=[installation_cmds + "python ./src/main.py", "--data_path", output.as_mount()],
+    command=[installation_cmds + "python ./src/main.py", "--data_path", output.as_mount(), "--ros_dist", "noetic"],
     compute_target=compute_manager.create_compute_target(ws, 'd12v2'),
     environment=env)
 
