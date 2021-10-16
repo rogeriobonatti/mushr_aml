@@ -29,6 +29,7 @@ installation_cmds = ("mkdir -p catkin_ws/src && " +
                      "git clone -b melodic-devel https://github.com/ros/robot_state_publisher.git && " +
                      "git clone -b melodic-devel https://github.com/rogeriobonatti/geometry.git && " +
                      "git clone -b melodic-devel https://github.com/ros/geometry2 && " +
+                     "git clone -b melodic-devel https://github.com/rogeriobonatti/ros_comm.git && " +
                      "mv mushr/mushr_hardware/realsense/realsense2_description mushr/mushr_hardware/realsense2_description && " +
                      "rm -rf mushr/mushr_hardware/realsense && " +
                      "cd ./range_libc/pywrapper && " +
