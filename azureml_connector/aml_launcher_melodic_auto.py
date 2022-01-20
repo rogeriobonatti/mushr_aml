@@ -1,4 +1,5 @@
 import os
+import time
 
 from azureml.core import (
     Environment, Experiment, ScriptRunConfig, Workspace, Datastore, Dataset
@@ -51,5 +52,8 @@ script_run_config = ScriptRunConfig(
     # compute_target=compute_manager.create_compute_target(ws, 'f8'),
     environment=env)
 
-exp = Experiment(workspace=ws, name='mushr-datacollection_2')
-exp.submit(config=script_run_config, tags={'ros': 'melodic'})
+exp = Experiment(workspace=ws, name='mushr-datacollection_0')
+
+for i in range(3):
+    exp.submit(config=script_run_config, tags={'ros': 'melodic'})
+    time.sleep(1)

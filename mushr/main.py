@@ -14,4 +14,4 @@ print(output_path)
 
 print(subprocess.check_output("which python", shell=True))
 
-subprocess.call("/bin/bash -c '. /opt/ros/{0}/setup.bash;. ./devel/setup.bash; roslaunch mushr_sim server_collection.launch record_path:={1}'".format(args.ros_dist, output_path), shell=True)
+subprocess.call("/bin/bash -c '. /opt/ros/{0}/setup.bash;. ./devel/setup.bash; roslaunch mushr_sim server_collection_slow.launch record_path:={1}'".format(args.ros_dist, output_path), shell=True)
